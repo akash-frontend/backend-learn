@@ -1,0 +1,118 @@
+Authentication
+It is of 2 things
+Signup and Signin
+
+Sign up
+You are allowing a user to create test credentials in your website
+
+
+In signup user fill credentials like name email password, 
+click the signup button and that credentials data goes 
+to the backend and saved there.
+
+Signin
+It basically means that you are allowing a user who is 
+already signed up to login and go ahead with the website
+
+
+In signin user input data like email and password
+and this data goes to backend and backend authenticates 
+whether email and password entered is correct or not, 
+if that is correct backend redirects it to some page
+
+
+
+To create signup API in backend
+We have to do these 4 things
+1. Create API
+2. Name the API like /signup
+3. Accept name email password
+4. Redirect to some page
+
+We divide into atomic steps
+
+
+1. Create the API
+To create a server to accept the API
+Create some HTML where user input some credentials
+
+
+
+To create a server
+Required package called express 
+We can create multiple servers in your device like laptop and we can differentiate these servers by PORT 
+So you have to define a port for your express server
+Since this is a post call I need to something to accept the body
+
+Create some HTML
+In this we need 3 pages
+1. Landing page where we have 2 buttons signin and signup
+2. Signup page
+3. Sign in page
+
+
+In backend there are 3 things
+1. Handle Performance in each and everything you do
+2. Handle Security in each and every step
+3. Handle Edge cases in each and every step
+
+
+
+2. Name the API as /signup
+Performance we handle by DSA
+Post request /signup so we add security
+We have to seperate frontend and backend urls like we use /api/v1/signup
+in version 2 release we have to just change version like /api/v2/signup
+
+
+3. Accept name, email and password
+1. In body we have data like
+{name:" ", email:" ", password: " "}
+2. Convert each of the value as strings
+3. Have validations(to make application more secure) 
+like email contain @ and .in or .com
+password validation like upper case, lower case, special symbol and numericals into it 
+4. Save it 
+5. Encrypt the password
+   Use library like bcrypt 
+
+
+Encryting the password is hiding the password 
+like abc is convert to aadjekw#123hs(16 or 32bit) (encrytion)
+hacker can decrypt abc password by permuation and combination (26x26x26)
+but aadjekw#123hs  can be very difficult for hacker to decrypt by permuation and combination 
+
+bcrypt use hashing while storing password 
+(to encrypt password)
+which cannot be decrypt back by anyone
+
+
+So 10 steps we need to create a signup api:
+1. Create an express app
+2. Create a PORT
+3. Accept the body
+4. Have some HTML
+5. Name the API as /api/v1/signup
+6. To check if user already exist 
+7. Validations
+8. Bcrypt
+Encrypt the password and then save it
+9.If there is an error send an alert
+10. (If all success not error) Redirect
+
+
+npm init to create nodejs application files
+Install package express, bcrypt
+
+
+package.json is meta data for your application
+Every nodejs application uses package.json which tells info 
+about your application like name version description dependencies etc
+main to specify starting point of your application
+
+npm install to install all dependencies which have in package.json file
+
+
+To accept something we have middlewares
+In express middlewares are basically any function that has 
+to be called before your function return any api is called
