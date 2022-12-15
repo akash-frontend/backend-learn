@@ -1,0 +1,181 @@
+Databases
+2types
+SQL and NO SQL
+
+In sql we have something called tables
+It is more secured by default
+It is relatively old
+When we have defined structure
+
+In no SQL we store objects 
+It is lightweight by default
+This is relatively new
+When we do not have defined structure
+
+
+In fb on a post you reply, reply on that reply then reply on this reply 
+so we don't know how many replies can be 
+so we can't predefined it's structure
+So in this we use no SQL
+
+
+If you create a table for user
+in which we have predefined columns name email dob etc
+So there we use sql database
+
+{email: {reply: {reply: {....}}}}
+This is the way no sql saves data
+
+
+
+Sql saves data like this
+
+Name | Email
+_____________
+Name1| Email1
+Name2| Email2
+
+
+Some examples of sql databases are
+My SQL
+SQLite
+Postgres
+
+NoSQL examples
+Mongodb
+Couchdb
+Pouchdb
+
+How sql is secured
+It is not directly going to json format
+and json is less secured
+
+in .sql there is some encryption you can't directly access data using sql file
+But in .json file you find whole json over there
+
+
+In sql 
+Create DB
+In database there can be multiple tables
+(It is collection of all tables in database) 
+
+It is like folder structure
+Like C:>>Devsnest >frontend backend
+This C drive represents a database
+devsnest represents tables
+frontend backend represents columns
+
+Ex 
+You create college website
+In database
+1 table for students data
+1 table for classes
+1 table can be of schedule
+1 table can be of inventory
+
+You should always do divide and conquer in database like
+If you create 1 table of college 
+You can't reuse students data in any other application
+
+Steps to use database:
+1. Create DB
+2. DB is on (check DB is active or not) 
+3. Create Tables
+4. Models (Structure of table) 
+
+
+Like in Users model
+We have 
+Name
+Email 
+Address 
+Dob
+
+
+We should add some validation on database also for database security and performance
+Like we add constraint
+Name should be string or make validation using regex
+JOI package helps you to validate on database layer itself 
+Anybody cannot modify your database until and unless it validates your validation
+Ex
+Name : String of length 8 (minimum) 
+Email : String with @ and . 
+Address : String
+Dob : Time
+
+Then you can create CRUD operations on the database
+
+Like Users.create() 
+Inside this you pass data
+And it will pass to Users 
+
+To read
+Users.find(condition where: {email: ' '}) 
+
+Find all users with this email
+Users.findAll(condition where: {email: ' '}) 
+
+To update
+Users.update ({where...... }, {__: "  "}) 
+
+To delete
+Users.delete({where...... }, {__}) 
+
+This model gives you functions to do crud operations
+
+
+When you create a table 
+A default column is created id which can be some random numbers or encrypted numbers
+Id is unique identifier for row data
+So this id get saved also in cache something called indexing
+Id saved in cache for faster retrieval
+
+Steps:
+1. Create DB
+2. Connect DB
+3. Tables using Models
+4. Operate CRUD (on these models) 
+
+Sequalize  => ORM
+Object Relational Model
+
+In sql we have 
+SQLite
+Sql3
+MySql 
+The way to write update in each one is different
+So what sequalize does is create wrapper around all these and gives you the same function 
+that is same for every sql based database
+So we have same update for sQLite, sql3 and mySql
+
+
+
+Code:
+
+use return while sending response 
+like if not use return and on failed validation it send validation error and go to catch 
+and show some error on console and app crashed
+if we use return it doesn't go to catch 
+instead it send particular validation error response and return from that function
+
+To prevent app from crashing on any error (like without return)
+process.on('uncaughtException'......)
+
+Add status code when sending response
+
+add packages sequelize and sqlite3
+
+
+Status Codes
+200 - Everything is OK
+201 - Modified Successfully
+
+Whatever starts from 2 means everything is ok on backend side
+
+400 or 500 means something went wrong on the backend
+
+500 - Something went wrong but don't know what happens
+
+400- Something went wrong and we know exactly what happened
+
+403- User already exist
