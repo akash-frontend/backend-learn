@@ -1,0 +1,49 @@
+
+Servers 
+Any Device without a screen and is publicly available
+
+Database
+The base where your data resides
+
+Data example
+chat, file, password, identity card, video
+
+Backend
+Inaccessible to user
+Write all logic to give it back to frontend
+Doesn't have any gui
+2 types
+Servers and Databases
+
+In browser like we request google.com index.html file now request goes to server and server request data from database 
+and then data goes to server and server sent it to browser
+
+We do API call to get data from server to browser as browser understand html files
+server understand nodejs
+
+API 
+Application Programming Interface
+
+Jargons of backend
+Servers 
+database 
+api
+
+Servers are intermediatary between frontend and database
+If fetches data from database
+If there is some computation on it
+It does computation and cleans the data and send it to frontend
+
+Api is interface which helps in communicating between browsers, server's and database
+
+Programming are just set of rules that you create
+to tell your computer to do something
+
+Nodes js handle high traffic
+
+
+Install nodejs from nvm
+nvm install latest
+nvm install v16
+
+
